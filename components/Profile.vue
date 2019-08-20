@@ -1,6 +1,6 @@
 <template>
   <section id="profile" class="section hero is-light is-fullheight">
-    <div v-scroll="handleScroll" class="erros container is-fluid">
+    <div v-scroll="handleScroll" class="profile-container container is-fluid">
       <div class="tile is-ancestor">
         <!-- 左側 -->
         <div class="tile is-parent is-3">
@@ -172,9 +172,9 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 @import url('bulma-timeline/dist/css/bulma-timeline.min.css');
-.erros {
+.profile-container {
   opacity: 0;
   transition: 1.5s all cubic-bezier(0.39, 0.575, 0.565, 1);
 }
