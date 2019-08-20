@@ -21,8 +21,10 @@
     }
   },
   "dependencies": {
+    "@nuxtjs/bulma": "^1.2.1",
+    "bulma-timeline": "^3.0.4",
     "nuxt": "^2.0.0",
-    "@nuxtjs/bulma": "^1.2.1"
+    "vue-scrollto": "^2.15.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",

@@ -14,6 +14,12 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
+    script: [
+      {
+        src: 'https://use.fontawesome.com/releases/v5.10.1/js/all.js',
+        defer: true
+      }
+    ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   /*
@@ -27,7 +33,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['~plugins/scroll.js', '~/plugins/vue-scrollto'],
   /*
    ** Nuxt.js dev-modules
    */
