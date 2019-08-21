@@ -1,5 +1,5 @@
 <template>
-  <section id="profile" class="section hero is-light is-fullheight">
+  <section id="profile" class="section hero is-light">
     <div v-scroll="handleScroll" class="profile-container container is-fluid">
       <div class="tile is-ancestor">
         <!-- 左側 -->
