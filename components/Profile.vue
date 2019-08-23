@@ -1,10 +1,9 @@
 <template>
   <section id="profile" class="section hero is-light">
     <div v-scroll="handleScroll" class="profile-container container is-fluid">
-      <div class="tile is-ancestor">
-        <!-- 左側 -->
-        <div class="tile is-parent is-3">
-          <article class="tile is-child notification">
+      <div class="tile is-vertical is-ancestor">
+        <div class="tile is-parent">
+          <div class="tile is-child notification is-3">
             <div class="content">
               <p class="title">My Profile</p>
             </div>
@@ -15,14 +14,12 @@
                 <p class="note">{{ me.note }}</p>
               </div>
             </article>
-          </article>
-        </div>
-        <!-- 中央 -->
-        <div class="tile is-parent">
-          <article class="tile is-child notification">
-            <div class="content">
+          </div>
+          <div class="tile is-child is-vertical notification">
+            <div class="tile is-child">
               <p class="title">Experience</p>
             </div>
+            <!-- TODO: 余白多めにする -->
             <article class="tile is-child notification is-dark box">
               <div class="timeline is-centered">
                 <div
@@ -38,49 +35,30 @@
                 </div>
               </div>
             </article>
-          </article>
-        </div>
-        <!-- 右側 -->
-        <div class="tile is-parent is-vertical is-5">
-          <div class="tile is-parent is-vertical">
-            <div class="tile is-parent">
+          </div>
+          <div class="tile is-child is-vertical notification">
+            <div class="tile is-child">
               <h1 class="title">My Skills</h1>
             </div>
             <div class="tile is-vertical">
-              <div class="tile">
-                <div class="tile is-parent">
-                  <article class="tile is-child notification is-info box">
-                    <div class="content">
-                      <p class="title">programming language</p>
-                    </div>
-                    <ul>
-                      <li v-for="(item, index) in progs" :key="index">
-                        <skill :name="item.name" :value="item.value" />
-                      </li>
-                    </ul>
-                  </article>
+              <article class="tile is-child notification is-info box">
+                <div class="content">
+                  <p class="title">programming language</p>
                 </div>
-                <div class="tile is-parent is-vertical">
-                  <article class="tile is-child notification is-primary box">
-                    <p class="title">Database</p>
-                    <ul>
-                      <li v-for="(item, index) in dbs" :key="index">
-                        <strong>{{ item }}</strong>
-                      </li>
-                    </ul>
-                  </article>
-                  <article class="tile is-child notification is-success box">
-                    <p class="title">Framework</p>
-                    <ul>
-                      <li v-for="(item, index) in fws" :key="index">
-                        <strong>{{ item }}</strong>
-                      </li>
-                    </ul>
-                  </article>
-                </div>
-              </div>
-            </div>
-            <div class="tile is-parent">
+                <ul>
+                  <li v-for="(item, index) in progs" :key="index">
+                    <skill :name="item.name" :value="item.value" />
+                  </li>
+                </ul>
+              </article>
+              <article class="tile is-child notification is-primary box">
+                <p class="title">Database</p>
+                <p>{{ dbs.join(' / ') }}</p>
+              </article>
+              <article class="tile is-child notification is-success box">
+                <p class="title">Framework</p>
+                <p>{{ fws.join(' / ') }}</p>
+              </article>
               <article class="tile is-child notification is-warning box">
                 <p class="title">Tools</p>
                 <p>{{ tools.join(' / ') }}</p>
