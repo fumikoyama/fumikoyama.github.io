@@ -19,7 +19,6 @@
             <div class="tile is-child">
               <p class="title">Experience</p>
             </div>
-            <!-- TODO: 余白多めにする -->
             <article class="tile is-child notification is-dark box">
               <div class="timeline is-centered">
                 <div
