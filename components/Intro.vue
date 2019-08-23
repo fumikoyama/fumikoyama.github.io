@@ -6,7 +6,7 @@
           <span
             v-for="(t, index) in text"
             :key="index"
-            class="item"
+            class="item has-text-info"
             :style="{ animationDelay: index * 100 + 'ms' }"
             v-text="t"
           ></span>
@@ -18,7 +18,7 @@
           I am Takafumi Koyama.
         </h1>
         <h2
-          class="subtitle"
+          class="subtitle has-text-primary"
           :style="{ animationDelay: (text.length + 12) * 100 + 'ms' }"
         >
           Engineer
@@ -56,11 +56,9 @@ export default {
   }
 }
 .hero.is-dark .title {
-  /* color: rgb(111, 146, 241); */
   animation: text-emerge 1s backwards;
 }
 .hero.is-dark .subtitle {
-  color: rgb(111, 241, 137);
   animation: text-emerge 1s backwards;
 }
 @keyframes text-in {
@@ -74,7 +72,7 @@ export default {
   min-width: 0.3em;
   font-size: 1.8em;
   font-weight: bold;
-  color: rgb(219, 252, 99);
+  /* color: rgb(219, 252, 99); */
   animation: text-in 0.7s cubic-bezier(0.22, 0.15, 0.25, 1.43) 0s backwards;
 }
 .button {

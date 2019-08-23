@@ -3,7 +3,8 @@
     <div v-scroll="handleScroll" class="profile-container container is-fluid">
       <div class="tile is-vertical is-ancestor">
         <div class="tile is-parent">
-          <div class="tile is-child notification is-3">
+          <!-- My Profile -->
+          <div class="tile is-child is-vertical notification">
             <div class="content">
               <p class="title">My Profile</p>
             </div>
@@ -14,8 +15,8 @@
                 <p class="note">{{ me.note }}</p>
               </div>
             </article>
-          </div>
-          <div class="tile is-child is-vertical notification">
+            <!-- / My Profile -->
+            <!-- Experience -->
             <div class="tile is-child">
               <p class="title">Experience</p>
             </div>
@@ -34,8 +35,10 @@
                 </div>
               </div>
             </article>
+            <!-- / Experience -->
           </div>
           <div class="tile is-child is-vertical notification">
+            <!-- My Skills -->
             <div class="tile is-child">
               <h1 class="title">My Skills</h1>
             </div>
@@ -63,6 +66,7 @@
                 <p>{{ tools.join(' / ') }}</p>
               </article>
             </div>
+            <!-- / My Skills -->
           </div>
         </div>
       </div>
