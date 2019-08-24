@@ -69,7 +69,7 @@ export default {
 }
 .icon-qiita:before {
   content: '';
-  background-image: url('~assets/images/qiita-favicon.png');
+  background-image: url('/qiita-favicon.png');
   display: inline-block;
   width: 1em;
   height: 1em;
