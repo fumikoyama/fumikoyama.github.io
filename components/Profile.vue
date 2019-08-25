@@ -1,14 +1,14 @@
 <template>
   <section id="profile" class="section hero is-light">
     <div v-scroll="handleScroll" class="profile-container container is-fluid">
-      <div class="tile is-vertical is-ancestor">
+      <div class="tile is-ancestor">
         <div class="tile is-parent">
-          <!-- My Profile -->
           <div class="tile is-child is-vertical notification">
-            <div class="content">
+            <!-- My Profile -->
+            <div class="tile is-child">
               <p class="title">My Profile</p>
             </div>
-            <article class="tile is-child notification is-white box">
+            <article class="tile is-child is-white box">
               <div class="content">
                 <p class="title is-4">{{ me.name_ja }}</p>
                 <p class="subtitle">{{ me.name_en }}</p>
@@ -20,7 +20,9 @@
             <div class="tile is-child">
               <p class="title">Experience</p>
             </div>
-            <article class="tile is-child notification is-dark box">
+            <article
+              class="tile is-child has-background-dark has-text-white box"
+            >
               <div class="timeline is-centered">
                 <div
                   v-for="(item, index) in exp"
@@ -42,30 +44,40 @@
             <div class="tile is-child">
               <h1 class="title">My Skills</h1>
             </div>
-            <div class="tile is-vertical">
-              <article class="tile is-child notification is-info box">
-                <div class="content">
-                  <p class="title">programming language</p>
-                </div>
-                <ul>
-                  <li v-for="(item, index) in progs" :key="index">
-                    <skill :name="item.name" :value="item.value" />
-                  </li>
-                </ul>
-              </article>
-              <article class="tile is-child notification is-primary box">
-                <p class="title">Database</p>
-                <p>{{ dbs.join(' / ') }}</p>
-              </article>
-              <article class="tile is-child notification is-success box">
-                <p class="title">Framework</p>
-                <p>{{ fws.join(' / ') }}</p>
-              </article>
-              <article class="tile is-child notification is-warning box">
-                <p class="title">Tools</p>
-                <p>{{ tools.join(' / ') }}</p>
-              </article>
-            </div>
+            <article
+              class="tile is-child has-background-info has-text-white box"
+            >
+              <div class="content">
+                <p class="title">programming language</p>
+              </div>
+              <ul>
+                <li v-for="(item, index) in progs" :key="index">
+                  <skill :name="item.name" :value="item.value" />
+                </li>
+              </ul>
+            </article>
+            <article
+              class="tile is-child has-background-primary has-text-white box"
+            >
+              <p class="title">Database</p>
+              <p>
+                <strong>{{ dbs.join(' / ') }}</strong>
+              </p>
+            </article>
+            <article
+              class="tile is-child has-background-success has-text-white box"
+            >
+              <p class="title">Framework</p>
+              <p>
+                <strong>{{ fws.join(' / ') }}</strong>
+              </p>
+            </article>
+            <article class="tile is-child has-background-warning box">
+              <p class="title">Tools</p>
+              <p>
+                <strong>{{ tools.join(' / ') }}</strong>
+              </p>
+            </article>
             <!-- / My Skills -->
           </div>
         </div>
