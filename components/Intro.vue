@@ -19,7 +19,7 @@
         </h1>
         <h2
           class="subtitle has-text-primary"
-          :style="{ animationDelay: (text.length + 12) * 100 + 'ms' }"
+          :style="{ animationDelay: (text.length + 11) * 100 + 'ms' }"
         >
           Engineer
         </h2>
@@ -27,7 +27,7 @@
           v-scroll-to="'#profile'"
           to
           class="button is-info is-inverted is-outlined is-medium"
-          :style="{ animationDelay: (text.length + 16) * 100 + 'ms' }"
+          :style="{ animationDelay: (text.length + 14) * 100 + 'ms' }"
         >
           <span>Learn More</span>
           <span class="icon is-small">

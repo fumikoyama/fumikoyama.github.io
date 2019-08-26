@@ -1,6 +1,6 @@
 <template>
   <section id="profile" class="section hero is-light">
-    <div v-scroll="handleScroll" class="profile-container container is-fluid">
+    <div v-scroll="handleScroll" class="container is-fluid">
       <div class="tile is-ancestor">
         <div class="tile is-parent">
           <div class="tile is-child is-vertical notification">
@@ -8,7 +8,7 @@
             <div class="tile is-child">
               <p class="title">My Profile</p>
             </div>
-            <article class="tile is-child is-white box">
+            <article class="fadein-content tile is-child is-white box">
               <div class="content">
                 <p class="title is-4">{{ me.name_ja }}</p>
                 <p class="subtitle">{{ me.name_en }}</p>
@@ -21,7 +21,7 @@
               <p class="title">Experience</p>
             </div>
             <article
-              class="tile is-child has-background-dark has-text-white box"
+              class="fadein-content tile is-child has-background-dark has-text-white box"
             >
               <div class="timeline is-centered">
                 <div
@@ -45,7 +45,7 @@
               <h1 class="title">My Skills</h1>
             </div>
             <article
-              class="tile is-child has-background-info has-text-white box"
+              class="fadein-content tile is-child has-background-info has-text-white box"
             >
               <div class="content">
                 <p class="title">programming language</p>
@@ -57,7 +57,7 @@
               </ul>
             </article>
             <article
-              class="tile is-child has-background-primary has-text-white box"
+              class="fadein-content tile is-child has-background-primary has-text-white box"
             >
               <p class="title">Database</p>
               <p>
@@ -65,14 +65,16 @@
               </p>
             </article>
             <article
-              class="tile is-child has-background-success has-text-white box"
+              class="fadein-content tile is-child has-background-success has-text-white box"
             >
               <p class="title">Framework</p>
               <p>
                 <strong>{{ fws.join(' / ') }}</strong>
               </p>
             </article>
-            <article class="tile is-child has-background-warning box">
+            <article
+              class="fadein-content tile is-child has-background-warning box"
+            >
               <p class="title">Tools</p>
               <p>
                 <strong>{{ tools.join(' / ') }}</strong>
@@ -151,15 +153,28 @@ export default {
       ]
     }
   },
+  mounted() {
+    this.$nextTick(this.test)
+  },
   methods: {
     handleScroll(evt, el) {
-      if (window.scrollY > 50) {
-        el.setAttribute(
-          'style',
-          'opacity: 1; transform: translate3d(0, -10px, 0)'
-        )
-      }
-      return window.scrollY > 100
+      return this.test()
+    },
+    test() {
+      // 未表示の要素だけ取得する
+      const list = Array.from(
+        document.getElementsByClassName('fadein-content')
+      ).filter((e) => !e.classList.contains('fadein'))
+      // 取得した要素について画面に表示されてるかチェックする
+      list.forEach((e) => {
+        // 要素のy座標をスクロール量を考慮して取得する
+        const targetTop = e.getBoundingClientRect().top + window.pageYOffset
+        // スクロールのy座標が所定位置を超えていたら表示する
+        if (window.scrollY > targetTop - window.innerHeight)
+          e.classList.add('fadein')
+      })
+      // リストが空かどうかの値を返す
+      return list.length === 0
     }
   }
 }
@@ -167,9 +182,14 @@ export default {
 
 <style scoped>
 @import url('bulma-timeline/dist/css/bulma-timeline.min.css');
-.profile-container {
+.fadein-content {
   opacity: 0;
+  transform: translate3d(0, 10px, 0);
   transition: 1.5s all cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+.fadein {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
 }
 .note {
   white-space: pre-wrap;
