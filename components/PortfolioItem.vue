@@ -12,7 +12,7 @@ export default {
 <template>
   <div class="column is-one-third-desktop is-half-tablet is-12-mobile">
     <figure class="image is-3by2 portfolio">
-      <img :src="image" alt="" />
+      <img :data-src="image" class="lazyload" alt="" />
     </figure>
   </div>
 </template>

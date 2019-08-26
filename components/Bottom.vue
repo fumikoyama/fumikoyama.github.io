@@ -22,7 +22,8 @@
         <p>Copyright &copy; Takafumi Koyama {{ year }}</p>
         <a href="https://bulma.io">
           <img
-            src="https://bulma.io/images/made-with-bulma--white.png"
+            data-src="https://bulma.io/images/made-with-bulma--white.png"
+            class="lazyload"
             alt="Made with Bulma"
             width="163"
             height="31"
