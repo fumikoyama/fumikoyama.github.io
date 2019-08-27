@@ -1,17 +1,49 @@
+const DESC = 'Takafumi Koyama is a engineer from Hokkaido, Japan'
+const TITLE = 'I am Takafumi Koyama.'
+const URL = 'https://fumikoyama.github.io'
+
 export default {
   mode: 'universal',
   /*
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    headAttrs: {
+      prefix: 'og: http://ogp.me/ns#'
+    },
+    title: TITLE,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content: DESC
+      },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: TITLE
+      },
+      {
+        hid: 'og:type',
+        property: 'og:type',
+        content: 'website'
+      },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: URL
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: TITLE
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: DESC
       }
     ],
     script: [
