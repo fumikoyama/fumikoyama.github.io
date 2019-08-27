@@ -1,6 +1,6 @@
 <template>
   <div class="modal" :class="{ 'is-active': isActive }">
-    <div class="modal-background"></div>
+    <div class="modal-background" @click="closeModal"></div>
     <div class="modal-card">
       <section class="modal-card-body">
         <figure class="image is-3by2">
