@@ -1,6 +1,6 @@
 <template>
   <section id="profile" class="section hero is-light">
-    <div v-scroll="handleScroll" class="container is-fluid">
+    <div class="container is-fluid">
       <div class="tile is-ancestor">
         <div class="tile is-parent">
           <div class="tile is-child is-vertical notification">
@@ -8,7 +8,10 @@
             <div class="tile is-child">
               <p class="title">My Profile</p>
             </div>
-            <article class="fadein-content tile is-child is-white box">
+            <article
+              v-clipscroll="{ className: 'fadein' }"
+              class="fadein-content tile is-child is-white box"
+            >
               <div class="content">
                 <p class="title is-4">{{ me.name_ja }}</p>
                 <p class="subtitle">{{ me.name_en }}</p>
@@ -21,6 +24,7 @@
               <p class="title">Experience</p>
             </div>
             <article
+              v-clipscroll="{ className: 'fadein' }"
               class="fadein-content tile is-child has-background-dark has-text-white box"
             >
               <div class="timeline is-centered">
@@ -45,6 +49,7 @@
               <h1 class="title">My Skills</h1>
             </div>
             <article
+              v-clipscroll="{ className: 'fadein' }"
               class="fadein-content tile is-child has-background-info has-text-white box"
             >
               <div class="content">
@@ -57,6 +62,7 @@
               </ul>
             </article>
             <article
+              v-clipscroll="{ className: 'fadein' }"
               class="fadein-content tile is-child has-background-primary has-text-white box"
             >
               <p class="title">Database</p>
@@ -65,6 +71,7 @@
               </p>
             </article>
             <article
+              v-clipscroll="{ className: 'fadein' }"
               class="fadein-content tile is-child has-background-success has-text-white box"
             >
               <p class="title">Framework</p>
@@ -73,6 +80,7 @@
               </p>
             </article>
             <article
+              v-clipscroll="{ className: 'fadein' }"
               class="fadein-content tile is-child has-background-warning box"
             >
               <p class="title">Tools</p>
@@ -151,30 +159,6 @@ export default {
         'SourceTree',
         'etc..'
       ]
-    }
-  },
-  mounted() {
-    this.$nextTick(this.test)
-  },
-  methods: {
-    handleScroll(evt, el) {
-      return this.test()
-    },
-    test() {
-      // 未表示の要素だけ取得する
-      const list = Array.from(
-        document.getElementsByClassName('fadein-content')
-      ).filter((e) => !e.classList.contains('fadein'))
-      // 取得した要素について画面に表示されてるかチェックする
-      list.forEach((e) => {
-        // 要素のy座標をスクロール量を考慮して取得する
-        const targetTop = e.getBoundingClientRect().top + window.pageYOffset
-        // スクロールのy座標が所定位置を超えていたら表示する
-        if (window.scrollY > targetTop - window.innerHeight)
-          e.classList.add('fadein')
-      })
-      // リストが空かどうかの値を返す
-      return list.length === 0
     }
   }
 }
