@@ -97,7 +97,7 @@ Vue.prototype.$particleSystem = (
               size,
               size,
               colors[~~(Math.random() * colors.length)],
-              particleBaseSpeed
+              particleBaseSpeed * (particleMinSize / size)
             )
           )
         }
