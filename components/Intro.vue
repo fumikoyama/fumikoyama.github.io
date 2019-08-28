@@ -1,8 +1,12 @@
 <template>
   <section class="hero is-dark is-fullheight">
-    <particles class="particles-container" />
-    <div class="hero-body">
-      <div class="intro">
+    <particles
+      class="particles-container"
+      :count="60"
+      :colors="['#eeb900', '#6DD0A5', '#f799db', '#f9f9f9']"
+    />
+    <div class="intro">
+      <div class="intro-content">
         <div>
           <span
             v-for="(t, index) in text"
@@ -77,7 +81,6 @@ export default {
   min-width: 0.3em;
   font-size: 1.8em;
   font-weight: bold;
-  /* color: rgb(219, 252, 99); */
   animation: text-in 0.7s cubic-bezier(0.22, 0.15, 0.25, 1.43) 0s backwards;
 }
 .button {
@@ -95,17 +98,17 @@ export default {
   }
 }
 .intro {
-  margin: 0 auto;
+  margin: auto;
   position: relative;
+  background-color: rgba(67, 67, 67, 0.2);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  padding: 2rem;
+}
+.intro-content {
   text-align: center !important;
 }
 @media screen and (max-height: 500px) and (max-width: 900px) {
-  .intro {
-    margin: 0;
-    margin-left: auto;
-    position: relative;
-    text-align: right !important;
-  }
   .button {
     display: flex;
     width: 100%;
@@ -113,5 +116,9 @@ export default {
 }
 .particles-container {
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 </style>

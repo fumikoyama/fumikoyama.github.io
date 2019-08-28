@@ -65,7 +65,11 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~plugins/clipscroll.js', '~/plugins/vue-scrollto'],
+  plugins: [
+    '~plugins/clipscroll.js',
+    '~/plugins/vue-scrollto',
+    '~/plugins/particleSystem'
+  ],
   /*
    ** Nuxt.js dev-modules
    */
