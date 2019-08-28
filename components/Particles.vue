@@ -2,6 +2,7 @@
   <div
     :id="id"
     :count="count"
+    :maxCount="maxCount"
     :colors="colors"
     :particleMinSize="particleMinSize"
     :particleMaxSize="particleMaxSize"
@@ -15,6 +16,10 @@ export default {
     count: {
       type: Number,
       default: 40
+    },
+    maxCount: {
+      type: Number,
+      default: undefined
     },
     colors: {
       type: Array,
@@ -43,6 +48,7 @@ export default {
       this.$particleSystem(
         this.$el.id,
         this.count,
+        this.maxCount,
         this.colors,
         this.particleMinSize,
         this.particleMaxSize,

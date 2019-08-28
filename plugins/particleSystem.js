@@ -3,6 +3,7 @@ import Vue from 'vue'
 Vue.prototype.$particleSystem = (
   id,
   count,
+  maxCount = count * 2,
   colors,
   particleMinSize,
   particleMaxSize,
@@ -74,6 +75,11 @@ Vue.prototype.$particleSystem = (
     // イベント登録処理
     const registration = () => {
       const onClick = (e) => {
+        // 追加されたパーティクル数が指定数以上になったらイベントリスナーを削除
+        if (particles.length >= maxCount) {
+          canvas.removeEventListener('click', onClick, false)
+          return
+        }
         const rect = e.target.getBoundingClientRect()
         const x = e.clientX - rect.x
         const y = e.clientY - rect.y
