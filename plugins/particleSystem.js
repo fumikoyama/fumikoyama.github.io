@@ -11,7 +11,7 @@ Vue.prototype.$particleSystem = (
 ) => {
   {
     class Particle {
-      constructor(x, y, w, h, color, speed, fill = false) {
+      constructor(x, y, w, h, color, speed) {
         // 座標
         this.x = x
         this.y = y
@@ -21,7 +21,7 @@ Vue.prototype.$particleSystem = (
         // 色
         this.color = color
         // 塗りつぶすか
-        this.fill = fill
+        this.isTouched = false
         // ランダムな角度
         const rot = Math.random() * 360
         const angle = (rot * Math.PI) / 180
@@ -32,13 +32,20 @@ Vue.prototype.$particleSystem = (
       draw(ctx) {
         // パスをリセット
         ctx.beginPath()
-        if (this.fill) {
+        if (this.isTouched) {
           ctx.fillStyle = this.color
           ctx.fillRect(this.x, this.y, this.w, this.h)
         } else {
           ctx.strokeStyle = this.color
           ctx.strokeRect(this.x, this.y, this.w, this.h)
         }
+      }
+      contains(x, y) {
+        const a = x > this.x
+        const b = x < this.x + this.w
+        const c = y < this.y + this.h
+        const d = y > this.y
+        return a && b && c && d
       }
     }
     // 画面サイズが変更された時の処理
@@ -75,50 +82,49 @@ Vue.prototype.$particleSystem = (
     // イベント登録処理
     const registration = () => {
       const onClick = (e) => {
-        // 追加されたパーティクル数が指定数以上になったらイベントリスナーを削除
-        if (particles.length >= maxCount) {
-          canvas.removeEventListener('click', onClick, false)
-          return
-        }
         const rect = e.target.getBoundingClientRect()
         const x = e.clientX - rect.x
         const y = e.clientY - rect.y
-        const size =
-          Math.floor(Math.random() * (particleMaxSize - particleMinSize)) +
-          particleMinSize
-        particles.push(
-          new Particle(
-            x - size / 2,
-            y - size / 2,
-            size,
-            size,
-            colors[~~(Math.random() * colors.length)],
-            particleBaseSpeed,
-            true
+        // 追加されたパーティクル数が指定数未満の場合はパーティクルを追加
+        if (particles.length < maxCount) {
+          const size =
+            Math.floor(Math.random() * (particleMaxSize - particleMinSize)) +
+            particleMinSize
+          particles.push(
+            new Particle(
+              x - size / 2,
+              y - size / 2,
+              size,
+              size,
+              colors[~~(Math.random() * colors.length)],
+              particleBaseSpeed
+            )
           )
-        )
+        }
+        // マウス座標を元にパーティクルの状態を更新
+        particles.forEach((p) => {
+          p.isTouched = p.contains(x, y)
+        })
       }
       const onMouseOver = (e) => {
         canvas.addEventListener('mousemove', onMouseMove, false)
       }
       const onMouseOut = (e) => {
         canvas.removeEventListener('mousemove', onMouseMove, false)
+        // パーティクルの状態をクリア
         particles
-          .filter((p) => p.fill)
+          .filter((p) => p.isTouched)
           .forEach((p) => {
-            p.fill = false
+            p.isTouched = false
           })
       }
       const onMouseMove = (e) => {
         const rect = e.target.getBoundingClientRect()
+        const x = e.clientX - rect.x
+        const y = e.clientY - rect.y
+        // マウス座標を元にパーティクルの状態を更新
         particles.forEach((p) => {
-          const x = e.clientX - rect.x
-          const y = e.clientY - rect.y
-          const a = x > p.x
-          const b = x < p.x + p.w
-          const c = y < p.y + p.h
-          const d = y > p.y
-          p.fill = a && b && c && d
+          p.isTouched = p.contains(x, y)
         })
       }
       window.addEventListener('resize', resize)

@@ -108,7 +108,7 @@ export default {
         name_ja: '小山貴史',
         name_en: 'Takafumi Koyama',
         note:
-          '北海道在住のエンジニア\n1985年生まれ\n\n.NET Framework を用いた Windows アプリケーション、Unity と Leap Motion を用いたインタラクティブコンテンツ、NodeJS を用いた SPA の開発などをしていました。'
+          '北海道在住のエンジニア\n1985年生まれ\n\n.NET Framework を用いた Windows アプリケーション、Unity と Leap Motion を用いたインタラクティブコンテンツ、NodeJS を用いた SPA の開発などをしていました。\n最近は Nuxt.js の勉強をしています。'
       },
       exp: [
         {
@@ -118,7 +118,7 @@ export default {
         },
         {
           date: 'March 2014',
-          note: '北海学園大学人文学部英米文化科卒業',
+          note: '北海学園大学人文学部英米文化学科卒業',
           color: 'is-danger'
         },
         {
