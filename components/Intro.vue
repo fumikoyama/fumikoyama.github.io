@@ -1,7 +1,8 @@
 <template>
   <section class="hero is-dark is-fullheight">
-    <div class="hero-body has-text-centered">
-      <div class="container">
+    <particles class="particles-container" />
+    <div class="hero-body">
+      <div class="intro">
         <div>
           <span
             v-for="(t, index) in text"
@@ -40,7 +41,11 @@
 </template>
 
 <script>
+import Particles from '~/components/Particles.vue'
 export default {
+  components: {
+    Particles
+  },
   data() {
     return {
       text: 'Hello, World.'
@@ -88,5 +93,25 @@ export default {
     opacity: 1;
     top: 0;
   }
+}
+.intro {
+  margin: 0 auto;
+  position: relative;
+  text-align: center !important;
+}
+@media screen and (max-height: 500px) and (max-width: 900px) {
+  .intro {
+    margin: 0;
+    margin-left: auto;
+    position: relative;
+    text-align: right !important;
+  }
+  .button {
+    display: flex;
+    width: 100%;
+  }
+}
+.particles-container {
+  position: absolute;
 }
 </style>
