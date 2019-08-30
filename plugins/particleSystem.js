@@ -188,6 +188,9 @@ class Rect {
   get bottom() {
     return this.y + this.h
   }
+  /**
+   * 四角形の位置
+   */
   get location() {
     return new Vector(this.x, this.y)
   }

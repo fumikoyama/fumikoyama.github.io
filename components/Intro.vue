@@ -4,7 +4,12 @@
       class="particles-container"
       :count="60"
       :max-count="60 * 3"
-      :colors="['#eeb900', '#6dd0a5', '#f799db', '#f9f9f9']"
+      :colors="[
+        'rgba(255, 199, 0, 0.76)',
+        'rgba(123, 228, 165, 0.76)',
+        'rgba(255, 153, 219, 0.76)',
+        'rgba(255, 255, 255, 0.76)'
+      ]"
     />
     <div class="intro">
       <div class="intro-content">
