@@ -6,7 +6,11 @@
         <div class="container">
           <ul>
             <li v-for="(item, index) in linkItems" :key="index">
-              <a class="button is-large is-dark" :href="item.url">
+              <a
+                class="button is-large is-dark"
+                :href="item.url"
+                :aria-label="item.label"
+              >
                 <span class="icon is-medium">
                   <i :class="item.icon"></i>
                 </span>
@@ -39,10 +43,18 @@ export default {
   data() {
     return {
       linkItems: [
-        // { url: '#', icon: 'fab fa-twitter fa-2x' },
-        { url: 'https://github.com/fumikoyama', icon: 'fab fa-github fa-2x' },
-        { url: 'https://qiita.com/t-koyama', icon: 'icon-qiita fa-2x' }
-        // { url: 'mailto:#', icon: 'far fa-envelope fa-2x' }
+        // { url: '#', icon: 'fab fa-twitter fa-2x', label: 'Twitter' },
+        {
+          url: 'https://github.com/fumikoyama',
+          icon: 'fab fa-github fa-2x',
+          label: 'Github'
+        },
+        {
+          url: 'https://qiita.com/t-koyama',
+          icon: 'icon-qiita fa-2x',
+          label: 'Qiita'
+        }
+        // { url: 'mailto:#', icon: 'far fa-envelope fa-2x', label: 'メール' }
       ]
     }
   },
