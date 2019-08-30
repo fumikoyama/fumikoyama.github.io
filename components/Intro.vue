@@ -3,7 +3,8 @@
     <particles
       class="particles-container"
       :count="60"
-      :colors="['#eeb900', '#6DD0A5', '#f799db', '#f9f9f9']"
+      :max-count="60 * 3"
+      :colors="['#eeb900', '#6dd0a5', '#f799db', '#f9f9f9']"
     />
     <div class="intro">
       <div class="intro-content">
@@ -85,12 +86,16 @@ export default {
 }
 .button {
   opacity: 0;
-  animation: rise 1.8s forwards;
+  animation: rise 1.2s forwards;
 }
 @keyframes rise {
   0% {
     opacity: 0;
-    top: 50px;
+    top: 20px;
+  }
+  10% {
+    opacity: 0;
+    top: 20px;
   }
   100% {
     opacity: 1;

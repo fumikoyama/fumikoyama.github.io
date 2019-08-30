@@ -40,7 +40,7 @@ export default {
   },
   data() {
     return {
-      id: 'particles-' + Math.floor(Math.random() * 5000)
+      id: 'particles-' + ~~(Math.random() * 5000)
     }
   },
   mounted() {
