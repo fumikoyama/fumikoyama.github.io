@@ -8,6 +8,9 @@ export default {
    ** Headers of the page
    */
   head: {
+    htmlAttrs: {
+      lang: 'ja'
+    },
     headAttrs: {
       prefix: 'og: http://ogp.me/ns#'
     },
