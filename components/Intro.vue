@@ -18,19 +18,19 @@
             v-for="(t, index) in text"
             :key="index"
             class="item has-text-info"
-            :style="{ animationDelay: index * 70 + 'ms' }"
+            :style="{ animationDelay: index * 100 + 'ms' }"
             v-text="t"
           ></span>
         </div>
         <h1
           class="title"
-          :style="{ animationDelay: (text.length + 1) * 100 + 'ms' }"
+          :style="{ animationDelay: (text.length + 4) * 100 + 'ms' }"
         >
           I am Takafumi Koyama.
         </h1>
         <h2
           class="subtitle has-text-primary"
-          :style="{ animationDelay: (text.length + 7) * 100 + 'ms' }"
+          :style="{ animationDelay: (text.length + 10) * 100 + 'ms' }"
         >
           Engineer
         </h2>
@@ -38,7 +38,7 @@
           v-scroll-to="'#profile'"
           to
           class="button is-info is-inverted is-outlined is-medium"
-          :style="{ animationDelay: (text.length + 10) * 100 + 'ms' }"
+          :style="{ animationDelay: (text.length + 13) * 100 + 'ms' }"
         >
           <span>Learn More</span>
           <span class="icon is-small">
@@ -91,7 +91,7 @@ export default {
 }
 .button {
   opacity: 0;
-  animation: rise 0.8s forwards;
+  animation: rise 1s forwards;
 }
 @keyframes rise {
   0% {
