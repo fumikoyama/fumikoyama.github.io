@@ -49,12 +49,6 @@ export default {
         content: DESC
       }
     ],
-    script: [
-      {
-        src: 'https://use.fontawesome.com/releases/v5.10.1/js/all.js',
-        defer: true
-      }
-    ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   /*
@@ -64,14 +58,15 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['@fortawesome/fontawesome-svg-core/styles.css'],
   /*
    ** Plugins to load before mounting the App
    */
   plugins: [
     '~plugins/clipscroll.js',
     '~/plugins/vue-scrollto',
-    '~/plugins/particleSystem'
+    '~/plugins/particleSystem',
+    '~/plugins/fontawesome.js'
   ],
   /*
    ** Nuxt.js dev-modules

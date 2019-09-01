@@ -42,7 +42,7 @@
         >
           <span>Learn More</span>
           <span class="icon is-small">
-            <i class="fas fa-chevron-down"></i>
+            <font-awesome-icon icon="chevron-down" />
           </span>
         </nuxt-link>
       </div>

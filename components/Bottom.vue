@@ -12,7 +12,12 @@
                 :aria-label="item.label"
               >
                 <span class="icon is-medium">
-                  <i :class="item.icon"></i>
+                  <font-awesome-icon
+                    v-if="item.icon"
+                    :icon="item.icon"
+                    :class="item.class"
+                  />
+                  <i v-else :class="item.class"></i>
                 </span>
               </a>
             </li>
@@ -43,18 +48,19 @@ export default {
   data() {
     return {
       linkItems: [
-        // { url: '#', icon: 'fab fa-twitter fa-2x', label: 'Twitter' },
+        // { url: '#', icon: ['fab', 'twitter'], class: 'fa-2x', label: 'Twitter' },
         {
           url: 'https://github.com/fumikoyama',
-          icon: 'fab fa-github fa-2x',
+          icon: ['fab', 'github'],
+          class: 'fa-2x',
           label: 'Github'
         },
         {
           url: 'https://qiita.com/t-koyama',
-          icon: 'icon-qiita fa-2x',
+          class: 'icon-qiita fa-2x',
           label: 'Qiita'
         }
-        // { url: 'mailto:#', icon: 'far fa-envelope fa-2x', label: 'メール' }
+        // { url: 'mailto:#', icon: ['far', 'envelope'], class: 'fa-2x', label: 'メール' }
       ]
     }
   },
