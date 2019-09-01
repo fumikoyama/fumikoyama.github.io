@@ -266,17 +266,19 @@ class Particle {
    * @param {CanvasRenderingContext2D} ctx コンテキスト
    */
   adjust(ctx) {
-    if (this.rect.right < -10) {
-      this.rect.x = ctx.canvas.width + 5
+    const screenOffset = 10
+    const offset = 5
+    if (this.rect.right < -screenOffset) {
+      this.rect.x = ctx.canvas.width + offset
     }
-    if (this.rect.left > ctx.canvas.width + 10) {
-      this.rect.x = 5
+    if (this.rect.left > ctx.canvas.width + screenOffset) {
+      this.rect.x = -(this.rect.w + offset)
     }
-    if (this.rect.bottom < -10) {
-      this.rect.y = ctx.canvas.height + 5
+    if (this.rect.bottom < -screenOffset) {
+      this.rect.y = ctx.canvas.height + offset
     }
-    if (this.rect.top > ctx.canvas.height + 10) {
-      this.rect.y = 5
+    if (this.rect.top > ctx.canvas.height + screenOffset) {
+      this.rect.y = -(this.rect.h + offset)
     }
   }
 }
