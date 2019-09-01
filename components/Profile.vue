@@ -50,10 +50,10 @@
             </div>
             <article
               v-clipscroll="{ className: 'fadein' }"
-              class="fadein-content tile is-child has-background-info has-text-white box"
+              class="fadein-content tile is-child has-background-info has-text-black-ter box"
             >
               <div class="content">
-                <p class="title">programming language</p>
+                <p class="title has-text-black-bis">Programming language</p>
               </div>
               <ul>
                 <li v-for="(item, index) in progs" :key="index">
@@ -63,7 +63,7 @@
             </article>
             <article
               v-clipscroll="{ className: 'fadein' }"
-              class="fadein-content tile is-child has-background-primary has-text-white box"
+              class="fadein-content tile is-child has-background-primary has-text-grey-darker box"
             >
               <p class="title">Database</p>
               <p>
@@ -72,7 +72,7 @@
             </article>
             <article
               v-clipscroll="{ className: 'fadein' }"
-              class="fadein-content tile is-child has-background-success has-text-white box"
+              class="fadein-content tile is-child has-background-success has-text-grey-darker box"
             >
               <p class="title">Framework</p>
               <p>
@@ -83,7 +83,7 @@
               v-clipscroll="{ className: 'fadein' }"
               class="fadein-content tile is-child has-background-warning box"
             >
-              <p class="title">Tools</p>
+              <p class="title">Tool</p>
               <p>
                 <strong>{{ tools.join(' / ') }}</strong>
               </p>
