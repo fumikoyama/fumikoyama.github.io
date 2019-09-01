@@ -50,6 +50,13 @@ export default {
       linkItems: [
         // { url: '#', icon: ['fab', 'twitter'], class: 'fa-2x', label: 'Twitter' },
         {
+          url:
+            'https://www.linkedin.com/in/%E8%B2%B4%E5%8F%B2-%E5%B0%8F%E5%B1%B1-949a43192/',
+          icon: ['fab', 'linkedin'],
+          class: 'fa-2x',
+          label: 'Linkedin'
+        },
+        {
           url: 'https://github.com/fumikoyama',
           icon: ['fab', 'github'],
           class: 'fa-2x',
