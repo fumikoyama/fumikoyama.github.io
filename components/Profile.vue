@@ -15,7 +15,10 @@
               <div class="content">
                 <p class="title is-4">{{ me.name_ja }}</p>
                 <p class="subtitle">{{ me.name_en }}</p>
-                <p class="note">{{ me.note }}</p>
+                <div v-for="(note, i) in me.notes" :key="i">
+                  <p v-if="note">{{ note }}</p>
+                  <br v-else />
+                </div>
               </div>
             </article>
             <!-- / My Profile -->
@@ -107,8 +110,14 @@ export default {
       me: {
         name_ja: '小山貴史',
         name_en: 'Takafumi Koyama',
-        note:
-          '北海道在住のエンジニア\n1985年生まれ\n\n.NET Framework を用いた Windows アプリケーション、Unity と Leap Motion を用いたインタラクティブコンテンツ、NodeJS を用いた SPA の開発などをしていました。\n最近は Nuxt.js の勉強をしています。'
+        notes: [
+          '北海道在住のエンジニア',
+          '1985年生まれ',
+          '',
+          '.NET Framework を用いた Windows アプリケーション、Unity と Leap Motion を用いたインタラクティブコンテンツ、NodeJS を用いた SPA の開発などをしていました。',
+          '',
+          '最近は Nuxt.js の勉強をしています。'
+        ]
       },
       exp: [
         {
@@ -174,8 +183,5 @@ export default {
 .fadein {
   opacity: 1;
   transform: translate3d(0, 0, 0);
-}
-.note {
-  white-space: pre-wrap;
 }
 </style>
