@@ -15,10 +15,10 @@
               <div class="content">
                 <p class="title is-4">{{ me.name_ja }}</p>
                 <p class="subtitle">{{ me.name_en }}</p>
-                <div v-for="(note, i) in me.notes" :key="i">
-                  <p v-if="note">{{ note }}</p>
-                  <br v-else />
-                </div>
+                <template v-for="(note, index) in me.notes">
+                  <p v-if="note" :key="index">{{ note }}</p>
+                  <br v-else :key="index" />
+                </template>
               </div>
             </article>
             <!-- / My Profile -->
