@@ -1,7 +1,6 @@
 <template>
   <section class="hero is-dark is-fullheight">
     <particles
-      class="particles-container"
       :count="60"
       :max-count="60 * 3"
       :colors="[
@@ -10,6 +9,7 @@
         'rgba(255, 153, 219, 0.76)',
         'rgba(255, 255, 255, 0.76)'
       ]"
+      class="particles-container"
     />
     <div class="intro">
       <div class="intro-content">
@@ -17,28 +17,28 @@
           <span
             v-for="(t, index) in text"
             :key="index"
-            class="item has-text-info"
             :style="{ animationDelay: index * 100 + 'ms' }"
             v-text="t"
+            class="item has-text-info"
           ></span>
         </div>
         <h1
-          class="title"
           :style="{ animationDelay: (text.length + 4) * 100 + 'ms' }"
+          class="title"
         >
           I am Takafumi Koyama.
         </h1>
         <h2
-          class="subtitle has-text-primary"
           :style="{ animationDelay: (text.length + 10) * 100 + 'ms' }"
+          class="subtitle has-text-primary"
         >
           Engineer
         </h2>
         <nuxt-link
           v-scroll-to="'#profile'"
+          :style="{ animationDelay: (text.length + 13) * 100 + 'ms' }"
           to
           class="button is-info is-inverted is-outlined is-medium"
-          :style="{ animationDelay: (text.length + 13) * 100 + 'ms' }"
         >
           <span>Learn More</span>
           <span class="icon is-small">

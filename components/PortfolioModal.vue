@@ -1,6 +1,6 @@
 <template>
-  <div class="modal" :class="{ 'is-active': isActive }">
-    <div class="modal-background" @click="closeModal"></div>
+  <div :class="{ 'is-active': isActive }" class="modal">
+    <div @click="closeModal" class="modal-background"></div>
     <div class="modal-card">
       <section class="modal-card-body">
         <figure class="image is-3by2">
@@ -10,9 +10,9 @@
       </section>
     </div>
     <button
+      @click="closeModal"
       class="modal-close is-large"
       aria-label="close"
-      @click="closeModal"
     ></button>
   </div>
 </template>

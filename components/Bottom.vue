@@ -7,9 +7,9 @@
           <ul>
             <li v-for="(item, index) in linkItems" :key="index">
               <a
-                class="button is-large is-dark"
                 :href="item.url"
                 :aria-label="item.label"
+                class="button is-large is-dark"
               >
                 <span class="icon is-medium">
                   <font-awesome-icon

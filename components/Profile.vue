@@ -36,7 +36,7 @@
                   :key="index"
                   class="timeline-item is-light"
                 >
-                  <div class="timeline-marker" :class="item.color"></div>
+                  <div :class="item.color" class="timeline-marker"></div>
                   <div class="timeline-content">
                     <p class="heading">{{ item.date }}</p>
                     <p class="note">{{ item.note }}</p>
@@ -128,11 +128,6 @@ export default {
         {
           date: 'March 2014',
           note: '北海学園大学人文学部英米文化学科卒業',
-          color: 'is-danger'
-        },
-        {
-          date: 'March 2018 - July 2019',
-          note: '株式会社インプルに入社',
           color: 'is-danger'
         },
         {

@@ -16,7 +16,7 @@ export default {
 <template>
   <div>
     <strong>{{ name }}</strong>
-    <progress class="progress" :value="value" max="100">
+    <progress :value="value" max="100" class="progress">
       {{ value }}%
     </progress>
   </div>
