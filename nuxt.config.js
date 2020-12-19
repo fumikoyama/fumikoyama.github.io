@@ -3,7 +3,6 @@ const TITLE = 'I am Takafumi Koyama.'
 const URL = 'https://fumikoyama.github.io'
 
 export default {
-  mode: 'universal',
   /*
    ** Headers of the page
    */
