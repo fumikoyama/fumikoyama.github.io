@@ -1,7 +1,7 @@
 export const state = () => ({
   image: '',
   description: '',
-  isActive: false
+  isActive: false,
 })
 
 export const mutations = {
@@ -20,7 +20,7 @@ export const mutations = {
   // モーダル非表示時の設定
   deactive(state) {
     state.isActive = false
-  }
+  },
 }
 
 export const actions = {
@@ -35,5 +35,5 @@ export const actions = {
     commit('deactive')
     commit('setImage', '')
     commit('setDescription', '')
-  }
+  },
 }

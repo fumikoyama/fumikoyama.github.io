@@ -112,7 +112,7 @@ const particleSystem = (
       window.mozRequestAnimationFrame ||
       window.oRequestAnimationFrame ||
       window.msRequestAnimationFrame ||
-      function(callback) {
+      function (callback) {
         window.setTimeout(callback, 1000 / 60)
       }
     )
@@ -164,36 +164,42 @@ class Rect {
     this.w = w
     this.h = h
   }
+
   /**
    * 四角形の左辺のx座標
    */
   get left() {
     return this.x
   }
+
   /**
    * 四角形の右辺のx座標
    */
   get right() {
     return this.x + this.w
   }
+
   /**
    * 四角形の上辺のy座標
    */
   get top() {
     return this.y
   }
+
   /**
    * 四角形の底辺のy座標
    */
   get bottom() {
     return this.y + this.h
   }
+
   /**
    * 四角形の位置
    */
   get location() {
     return new Vector(this.x, this.y)
   }
+
   /**
    * 指定された点が四角形に含まれるか
    * @param {number} x x座標
@@ -228,6 +234,7 @@ class Particle {
     // 移動方向
     this.vector = vector
   }
+
   /**
    * パーティクルを描画する
    * @param {CanvasRenderingContext2D} ctx コンテキスト
@@ -243,6 +250,7 @@ class Particle {
       ctx.strokeRect(this.rect.x, this.rect.y, this.rect.w, this.rect.h)
     }
   }
+
   /**
    * 指定された点がパーティクルに含まれるか
    * @param {number} x x座標
@@ -252,6 +260,7 @@ class Particle {
   contains(x, y) {
     return this.rect.contains(x, y)
   }
+
   /**
    * パーティクルを移動する
    * @param {Vector} location パーティクルを表示する位置（省略時は内部で保持している座標位置）
@@ -261,6 +270,7 @@ class Particle {
     this.rect.x = location.x + vector.x
     this.rect.y = location.y + vector.y
   }
+
   /**
    * パーティクルの座標を調整する
    * @param {CanvasRenderingContext2D} ctx コンテキスト

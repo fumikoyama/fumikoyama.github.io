@@ -7,7 +7,7 @@
         'rgba(255, 199, 0, 0.76)',
         'rgba(123, 228, 165, 0.76)',
         'rgba(255, 153, 219, 0.76)',
-        'rgba(255, 255, 255, 0.76)'
+        'rgba(255, 255, 255, 0.76)',
       ]"
       class="particles-container"
     />
@@ -18,8 +18,8 @@
             v-for="(t, index) in text"
             :key="index"
             :style="{ animationDelay: index * 100 + 'ms' }"
-            v-text="t"
             class="item has-text-info"
+            v-text="t"
           ></span>
         </div>
         <h1
@@ -54,13 +54,13 @@
 import Particles from '~/components/Particles.vue'
 export default {
   components: {
-    Particles
+    Particles,
   },
   data() {
     return {
-      text: 'Hello, World.'
+      text: 'Hello, World.',
     }
-  }
+  },
 }
 </script>
 

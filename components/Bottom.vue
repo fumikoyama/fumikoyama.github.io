@@ -53,29 +53,29 @@ export default {
           url: 'https://www.linkedin.com/in/takafumikoyama/',
           icon: ['fab', 'linkedin'],
           class: 'fa-2x',
-          label: 'Linkedin'
+          label: 'Linkedin',
         },
         {
           url: 'https://github.com/fumikoyama',
           icon: ['fab', 'github'],
           class: 'fa-2x',
-          label: 'Github'
+          label: 'Github',
         },
         {
           url: 'https://qiita.com/t-koyama',
           class: 'icon-qiita fa-2x',
-          label: 'Qiita'
-        }
+          label: 'Qiita',
+        },
         // { url: 'mailto:#', icon: ['far', 'envelope'], class: 'fa-2x', label: 'メール' }
-      ]
+      ],
     }
   },
   computed: {
     year() {
       const now = new Date()
       return now.getFullYear()
-    }
-  }
+    },
+  },
 }
 </script>
 

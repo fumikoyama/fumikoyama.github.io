@@ -11,4 +11,4 @@ library.add(faChevronDown)
 // fab
 library.add(faGithub, faLinkedin)
 
-Vue.component('font-awesome-icon', FontAwesomeIcon)
+Vue.component('FontAwesomeIcon', FontAwesomeIcon)

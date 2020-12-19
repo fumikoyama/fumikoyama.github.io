@@ -15,32 +15,32 @@ export default {
   props: {
     count: {
       type: Number,
-      default: 40
+      default: 40,
     },
     maxCount: {
       type: Number,
-      default: undefined
+      default: undefined,
     },
     colors: {
       type: Array,
-      default: () => ['#eeb900', '#6DD0A5', '#f799db']
+      default: () => ['#eeb900', '#6DD0A5', '#f799db'],
     },
     particleMinSize: {
       type: Number,
-      default: 20
+      default: 20,
     },
     particleMaxSize: {
       type: Number,
-      default: 100
+      default: 100,
     },
     particleBaseSpeed: {
       type: Number,
-      default: 1
-    }
+      default: 1,
+    },
   },
   data() {
     return {
-      id: 'particles-' + ~~(Math.random() * 5000)
+      id: 'particles-' + ~~(Math.random() * 5000),
     }
   },
   mounted() {
@@ -55,6 +55,6 @@ export default {
         this.particleBaseSpeed
       )
     })
-  }
+  },
 }
 </script>

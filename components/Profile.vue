@@ -103,7 +103,7 @@
 import Skill from '~/components/Skill.vue'
 export default {
   components: {
-    Skill
+    Skill,
   },
   data() {
     return {
@@ -116,25 +116,25 @@ export default {
           '',
           '.NET Framework を用いた Windows アプリケーション、Unity と Leap Motion を用いたインタラクティブコンテンツ、NodeJS を用いた SPA の開発などをしていました。',
           '',
-          '最近は Nuxt.js の勉強をしています。'
-        ]
+          '最近は Nuxt.js の勉強をしています。',
+        ],
       },
       exp: [
         {
           date: 'June 2013 - March 2018',
           note: '有限会社宏曜に入社',
-          color: 'is-danger'
+          color: 'is-danger',
         },
         {
           date: 'March 2014',
           note: '北海学園大学人文学部英米文化学科卒業',
-          color: 'is-danger'
+          color: 'is-danger',
         },
         {
           date: 'August 2019 - Present',
           note: '無職転生中',
-          color: 'is-primary'
-        }
+          color: 'is-primary',
+        },
       ],
       progs: [
         { name: 'C#', value: '95' },
@@ -142,9 +142,9 @@ export default {
         { name: 'Java', value: '60' },
         { name: 'Javascript', value: '80' },
         { name: 'TypeScript', value: '65' },
-        { name: 'PHP', value: '80' }
+        { name: 'PHP', value: '80' },
       ],
-      dbs: ['MySQL', 'Microsoft SQL Server', 'SQLite'],
+      dbs: ['MySQL', 'Microsoft SQL Server', 'SQLite', 'Oracle'],
       fws: [
         '.NET Framework',
         'ASP.NET Core',
@@ -154,17 +154,17 @@ export default {
         'Qt',
         'Laravel',
         'AngularJS (v1.x)',
-        'Vue.js'
+        'Vue.js',
       ],
       tools: [
         'Visual Studio',
         'Visual Studio Code',
         'PHPStorm',
         'SourceTree',
-        'etc..'
-      ]
+        'etc..',
+      ],
     }
-  }
+  },
 }
 </script>
 

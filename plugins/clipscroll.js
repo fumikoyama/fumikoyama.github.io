@@ -26,5 +26,5 @@ Vue.directive('clipscroll', {
     // クラス名が指定されている時だけイベントリスナーを登録する
     window.addEventListener('load', f)
     window.addEventListener('scroll', f)
-  }
+  },
 })

@@ -1,6 +1,6 @@
 <template>
   <div :class="{ 'is-active': isActive }" class="modal">
-    <div @click="closeModal" class="modal-background"></div>
+    <div class="modal-background" @click="closeModal"></div>
     <div class="modal-card">
       <section class="modal-card-body">
         <figure class="image is-3by2">
@@ -10,9 +10,9 @@
       </section>
     </div>
     <button
-      @click="closeModal"
       class="modal-close is-large"
       aria-label="close"
+      @click="closeModal"
     ></button>
   </div>
 </template>
@@ -22,10 +22,10 @@ import { mapState, mapActions } from 'vuex'
 
 export default {
   computed: {
-    ...mapState('portfolio_modal', ['image', 'description', 'isActive'])
+    ...mapState('portfolio_modal', ['image', 'description', 'isActive']),
   },
   methods: {
-    ...mapActions('portfolio_modal', ['closeModal'])
-  }
+    ...mapActions('portfolio_modal', ['closeModal']),
+  },
 }
 </script>

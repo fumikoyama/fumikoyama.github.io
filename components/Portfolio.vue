@@ -29,20 +29,20 @@ import PortfolioModal from '~/components/PortfolioModal.vue'
 export default {
   components: {
     PortfolioItem,
-    PortfolioModal
+    PortfolioModal,
   },
   data() {
     return {
       portfolioItems: [
         {
           image: require('~/assets/images/my-page.png'),
-          description: 'Nuxt.js と Bulma を使って作成しました。'
-        }
-      ]
+          description: 'Nuxt.js と Bulma を使って作成しました。',
+        },
+      ],
     }
   },
   methods: {
-    ...mapActions('portfolio_modal', ['openModal'])
-  }
+    ...mapActions('portfolio_modal', ['openModal']),
+  },
 }
 </script>

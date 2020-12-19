@@ -26,7 +26,7 @@ export default {
     Intro,
     Profile,
     Portfolio,
-    Bottom
-  }
+    Bottom,
+  },
 }
 </script>

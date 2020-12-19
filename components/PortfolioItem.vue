@@ -3,9 +3,9 @@ export default {
   props: {
     image: {
       type: String,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>
 
